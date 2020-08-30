@@ -1,0 +1,59 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Hospital Billing Pricing Karnataka</a>
+
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1 class="display-4">Hello, world!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+      featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1>
+        Pricing for Private Hospitals
+      </h1>
+      <p></p>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Illness level and Medical Requirement</th>
+            <th scope="col">Admission Category</th>
+            <th scope="col">General Ward Category</th>
+            <th scope="col">Twin Sharing Category</th>
+            <th scope="col">Private ward Category</th>
+            <th scope="col">Suite ward</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of billingData; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              {{ entry.requirement }}
+            </td>
+            <td>{{ entry.admissionCategory  }}</td>
+            <td>{{ entry.generalWard  }}</td>
+            <td>{{ entry.twinSharing  }}</td>
+            <td>{{ entry.privateWard  }}</td>
+            <td>{{ entry.suiteWard  }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>
