@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --baseHref=”https://prahaladbelavadi.github.io/karnataka-hospital-billing-pricing/",
+    "build": "ng build --prod --baseHref=/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

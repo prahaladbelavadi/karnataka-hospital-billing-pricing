@@ -9,15 +9,35 @@
 
 
 <div class="container-fluid">
-  <div class="jumbotron">
+  <!-- <div class="jumbotron">
     <h1 class="display-4">Hello, world!</h1>
     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
       featured content or information.</p>
     <hr class="my-4">
     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </div>
+  </div> -->
 
+  <div class="container-fluid">
+    <div class="jumbotron">
+
+      <div class="input-group">
+
+        <h2 class="text-center col-md-12">How many days were you hospitalized for ?</h2>
+        <input type="text" class="form-control mt-2">
+        <div class="input-group-append">
+          <span class="input-group-text">Days</span>
+        </div>
+
+        <button class="btn btn-primary btn-block text-center mt-2">
+          Submit
+        </button>
+
+      </div>
+
+
+    </div>
+  </div>
 
   <div class="container-fluid">
     <div class="jumbotron">
@@ -39,16 +59,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let entry of billingData; index as i">
+          <tr *ngFor="let entry of private_billingData; index as i">
             <th scope="row">{{ i + 1 }}</th>
             <td>
               {{ entry.requirement }}
             </td>
             <td>{{ entry.admissionCategory  }}</td>
-            <td>{{ entry.generalWard  }}</td>
-            <td>{{ entry.twinSharing  }}</td>
-            <td>{{ entry.privateWard  }}</td>
-            <td>{{ entry.suiteWard  }}</td>
+            <td>{{ entry.generalWard |currency:'INR':'symbol-narrow' }}</td>
+            <td>{{ entry.twinSharing | currency:'INR':'symbol-narrow'  }}</td>
+            <td>{{ entry.privateWard |currency:'INR':'symbol-narrow' }}</td>
+            <td>{{ entry.suiteWard   }}</td>
           </tr>
         </tbody>
       </table>
@@ -57,3 +77,10 @@
 
 
 </div>
+
+<footer class="footer text-muted text-center">
+  <div class="container">
+    Terms and conditions
+
+  </div>
+</footer>
