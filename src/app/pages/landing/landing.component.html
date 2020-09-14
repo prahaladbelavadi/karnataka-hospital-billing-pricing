@@ -20,21 +20,61 @@
 
   <div class="container-fluid">
     <div class="jumbotron">
+      <div class="row">
+        <div class="col-md">
+          <label>
+            How many days were you at the hospital ?
+          </label>
+          <div class="input-group">
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <div class="input-group-append">
+              <span class="input-group-text">Days</span>
+            </div>
+          </div>
 
-      <div class="input-group">
-
-        <h2 class="text-center col-md-12">How many days were you hospitalized for ?</h2>
-        <input type="text" class="form-control mt-2">
-        <div class="input-group-append">
-          <span class="input-group-text">Days</span>
         </div>
+        <div class="col-md">
+          <label for="inputState">Which type of bed:</label>
+          <select id="inputState" class="form-control" name="bedType" [(ngModel)]="bedType">
+            <option>
+              General Ward
+            </option>
+            <option>
+              Twin Sharing
+            </option>
+            <option>
+              Private Ward
+            </option>
+          </select>
 
-        <button class="btn btn-primary btn-block text-center mt-2">
-          Submit
-        </button>
+
+        </div>
+        <div class="col-md">
+          Severity:
+
+          <label for="inputState">Which level of Severity:</label>
+          <select id="inputState" class="form-control" name="severity" [(ngModel)]="severity">
+            <option>
+              Monitoring in Hospital
+            </option>
+            <option>
+              Pre ICU
+            </option>
+            <option>
+              ICU
+            </option>
+
+            <option>
+              Ventilator
+            </option>
+          </select>
+        </div>
 
       </div>
 
+      <button class="btn btn-primary mt-3 btn-block">
+        Calculate
+      </button>
 
     </div>
   </div>
@@ -65,9 +105,9 @@
               {{ entry.requirement }}
             </td>
             <td>{{ entry.admissionCategory  }}</td>
-            <td>{{ entry.generalWard |currency:'INR':'symbol-narrow' }}</td>
+            <td>{{ entry.generalWard | currency:'INR':'symbol-narrow' }}</td>
             <td>{{ entry.twinSharing | currency:'INR':'symbol-narrow'  }}</td>
-            <td>{{ entry.privateWard |currency:'INR':'symbol-narrow' }}</td>
+            <td>{{ entry.privateWard | currency:'INR':'symbol-narrow' }}</td>
             <td>{{ entry.suiteWard   }}</td>
           </tr>
         </tbody>
@@ -75,6 +115,42 @@
     </div>
   </div>
 
+
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1>
+        Pricing for Public Hospitals
+      </h1>
+      <p></p>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Illness level and Medical Requirement</th>
+            <th scope="col">Admission Category</th>
+            <th scope="col">General Ward Category</th>
+            <th scope="col">Twin Sharing Category</th>
+            <th scope="col">Private ward Category</th>
+            <th scope="col">Suite ward</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of public_billingData; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              {{ entry.requirement }}
+            </td>
+            <td>{{ entry.admissionCategory  }}</td>
+            <td>{{ entry.generalWard | currency:'INR':'symbol-narrow' }}</td>
+            <td>{{ entry.twinSharing | currency:'INR':'symbol-narrow'  }}</td>
+            <td>{{ entry.privateWard | currency:'INR':'symbol-narrow' }}</td>
+            <td>{{ entry.suiteWard   }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
 </div>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BillingData } from '../../interfaces/billingData';
 
 @Component({
   selector: 'app-landing',
@@ -7,19 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
   public private_billingData: BillingData[] = PrivateBillingData;
-
+  public public_billingData: BillingData[] = PublicBillingData;
+  bedType;
+  severity;
   constructor() {}
 
   ngOnInit(): void {}
-}
-
-interface BillingData {
-  requirement: string;
-  admissionCategory: string;
-  generalWard: number;
-  twinSharing: number;
-  privateWard: number;
-  suiteWard: number;
 }
 
 const PrivateBillingData: any[] = [
