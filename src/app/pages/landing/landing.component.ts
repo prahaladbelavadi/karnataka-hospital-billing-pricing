@@ -55,7 +55,7 @@ const PublicBillingData: any[] = [
   {
     requirement: 'Monitoring in Hospital',
     admissionCategory: 'Covid Routine',
-    generalWard: '10000',
+    generalWard: '5200',
     twinSharing: '11000',
     privateWard: '12500',
     suiteWard: 'As per Hospital Tariff',
@@ -63,7 +63,7 @@ const PublicBillingData: any[] = [
   {
     requirement: 'Pre ICU Severity',
     admissionCategory: 'Covid HDU / Oxygen flow',
-    generalWard: '12000',
+    generalWard: '7000',
     twinSharing: '13000',
     privateWard: '15000',
     suiteWard: 'As per Hospital Tariff',
