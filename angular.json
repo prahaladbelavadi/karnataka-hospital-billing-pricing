@@ -143,8 +143,13 @@
               "devServerTarget": "hospital-billing:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "hospital-billing"
 }
