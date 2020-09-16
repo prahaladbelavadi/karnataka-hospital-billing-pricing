@@ -56,10 +56,9 @@
         At Private Hospitals:
       </h1>
 
-      <h2>
-        Bed Type: {{bedType}}
-      </h2>
-      {{numberOfDaysAtHospital}} Days
+      <h3>
+        Pricing for {{bedType}} for {{numberOfDaysAtHospital}} Days :
+      </h3>
 
       <table class="table table-dark m-2">
         <thead>
@@ -72,13 +71,13 @@
         <tbody>
           <tr>
             <td>
-              {{bedTypes[bedType] * numberOfDaysAtHospital}}
+              {{privateBedTypes[bedType] * numberOfDaysAtHospital | currency:"&#8377;" }}
             </td>
             <td>
-              {{((10/100)*bedTypes[bedType] + bedTypes[bedType]) * numberOfDaysAtHospital}}
+              {{((10/100)*privateBedTypes[bedType] + privateBedTypes[bedType]) * numberOfDaysAtHospital | currency:"&#8377;" }}
             </td>
             <td>
-              {{((25/100)*bedTypes[bedType] + bedTypes[bedType]) * numberOfDaysAtHospital}}
+              {{((25/100)*privateBedTypes[bedType] + privateBedTypes[bedType]) * numberOfDaysAtHospital | currency:"&#8377;"}}
             </td>
           </tr>
         </tbody>
@@ -86,6 +85,43 @@
 
 
     </div>
+
+    <div class="jumbotron">
+
+      <h1>
+        At Public Hospitals:
+      </h1>
+
+      <h3>
+        Pricing for {{bedType}} for {{numberOfDaysAtHospital}} Days :
+      </h3>
+
+      <table class="table table-dark m-2">
+        <thead>
+          <tr>
+            <th scope="col">General Ward</th>
+            <th scope="col">Twin Sharing</th>
+            <th scope="col">Single Room</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              {{publicBedTypes[bedType] * numberOfDaysAtHospital | currency:"&#8377;" }}
+            </td>
+            <td>
+              {{((10/100)*publicBedTypes[bedType] + publicBedTypes[bedType]) * numberOfDaysAtHospital | currency:"&#8377;" }}
+            </td>
+            <td>
+              {{((25/100)*publicBedTypes[bedType] + publicBedTypes[bedType]) * numberOfDaysAtHospital | currency:"&#8377;"}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+
   </div>
 </div>
 
