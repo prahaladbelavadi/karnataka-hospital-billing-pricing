@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Hospital Billing Pricing Karnataka</a>
+  <a class="navbar-brand" href="#">Hospital Pricing : Karnataka</a>
 </nav>
 
 
@@ -37,14 +37,20 @@
             </option>
           </select>
 
-          <button class="btn btn-primary mt-3 btn-block">
-            Calculate
-          </button>
-
+          <a href="https://covid19.karnataka.gov.in/storage/pdf-files/HFW-228-ACS-2020.pdf" target="_blank">
+            <button class="btn btn-info mt-3 btn-block">
+              Source
+            </button>
+          </a>
         </div>
 
       </div>
 
+      <div class="text-center text-muted mt-2">
+        <span>
+          This is an estimate of bed pricing across public and private hospitals.
+        </span>
+      </div>
 
     </div>
   </div>
@@ -127,7 +133,10 @@
 
 <footer class="footer text-muted text-center">
   <div class="container">
-    Terms and conditions
+
+    <a [routerLink]="['/toc']">
+      Terms and conditions
+    </a>
 
   </div>
 </footer>
